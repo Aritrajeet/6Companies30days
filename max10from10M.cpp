@@ -19,3 +19,21 @@ vector<int> max10(vector<int> arr)
   }
   return ans;
 }
+
+//CASE 2: Numbers are large i.e. 0 > n > 10^5 or bigger. We use heap of size 10. Put first 10 numbers into the heap. Then compare all elements always replacing the minimum element
+       // with the greater one. This way at the end we have max 10 numbers in the heap. 
+vector<int> max10(vector<int> arr)
+{
+  vector <int> s;
+  for (int i=0; i<10; i++){
+    s.push_back(arr[i]);
+  }
+  sort(s.begin(),s.end());
+  for (int i= 10; i<arr.size(); i++){
+    if (arr[i] > s[0])
+    {
+      swap(arr[i],s[0]);
+    }
+  }
+  return s;
+}
