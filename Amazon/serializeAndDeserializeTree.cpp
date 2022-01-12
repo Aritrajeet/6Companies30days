@@ -2,7 +2,7 @@ class Solution
 {
     public:
      vector<int> vec;
-    //Function to serialize a tree and return a list containing nodes of tree.
+    //Function to serialize a tree and return a list containing nodes of tree .
     void help(Node* root)
     {
         if(!root)
